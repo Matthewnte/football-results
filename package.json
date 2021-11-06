@@ -1,0 +1,24 @@
+{
+  "name": "football-results",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Matthewnte/football-results.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Matthewnte/football-results/issues"
+  },
+  "homepage": "https://github.com/Matthewnte/football-results#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1"
+  }
+}
