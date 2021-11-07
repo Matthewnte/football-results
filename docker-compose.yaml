@@ -9,7 +9,8 @@ services:
     volumes:
       - .:/app
       - /app/node_modules
+    environment:
+      - NODE_ENV=development
     command:
       - nodemon
-      - --inspect=0.0.0.0:4001
       - src/server.js

@@ -3,6 +3,8 @@ FROM node:14-alpine
 # Create app directory
 WORKDIR /app
 
+RUN npm install nodemon -g
+
 #Copy package.json and package-lock to enjoy caching
 COPY package*.json .
 
@@ -12,4 +14,4 @@ COPY . .
 
 EXPOSE 4000
 
-ENTRYPOINT ["./start.sh"]
+CMD [ "node", "src/server", ]
