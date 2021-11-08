@@ -1,6 +1,6 @@
 version: '3.9'
 services:
-  server:
+  football-result:
     build:
       context: ./
     ports:
@@ -11,6 +11,16 @@ services:
       - /app/node_modules
     environment:
       - NODE_ENV=development
-    command:
-      - nodemon
-      - src/server.js
+    depends_on:
+      - postgres_db
+  postgres_db:
+    restart: always
+    image: postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=football-results
+    ports:
+      - 5436:5432
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data

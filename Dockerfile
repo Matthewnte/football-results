@@ -14,4 +14,4 @@ COPY . .
 
 EXPOSE 4000
 
-CMD [ "node", "src/server", ]
+ENTRYPOINT ["/app/start.sh"]

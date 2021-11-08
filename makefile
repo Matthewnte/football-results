@@ -1,6 +1,6 @@
 up:
-	docker build -t football-results .
+	docker compose build
 test:
-	docker build -t onepipe_agent_webhook .
+	npm run test
 serve:
-	docker run -p 4000:4000 -v ${PWD}:/app -v /app/node_modules football-results nodemon src/server.js
+	docker compose up
