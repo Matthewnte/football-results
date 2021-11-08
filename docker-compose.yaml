@@ -1,0 +1,26 @@
+version: '3.9'
+services:
+  football-result:
+    build:
+      context: ./
+    ports:
+      - '4000:4000'
+      - '4001:4001'
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+    depends_on:
+      - postgres_db
+  postgres_db:
+    restart: always
+    image: postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=football-results
+    ports:
+      - 5436:5432
+    volumes:
+      - ./pgdata:/var/lib/postgresql/data
