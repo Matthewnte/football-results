@@ -1,7 +1,6 @@
 const fastcsv = require('fast-csv');
 const { bufferToStream, formatDate } = require('.');
 const db = require('../config/knex');
-const Exception = require('./exception');
 
 const uploader = {
   csv: ({ file, resultId }) => {
@@ -30,11 +29,7 @@ const uploader = {
           };
         }
 
-        await db('results')
-          .insert(resultData)
-          .catch((error) => {
-            throw new Exception(`Fail to import data into database!: ${error.message}`, 500);
-          });
+        await db('results').insert(resultData);
 
         return {
           status: 'Successful',

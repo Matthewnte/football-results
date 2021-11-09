@@ -1,17 +1,17 @@
 exports.up = function (knex) {
   return knex.schema.createTable('results', (table) => {
-    table.decimal('id').primary();
-    table.text('Div');
-    table.string('Season');
-    table.date('Date');
-    table.string('HomeTeam');
-    table.string('AwayTeam');
-    table.string('FTHG');
-    table.string('FTAG');
-    table.string('FTR');
-    table.string('HTHG');
-    table.string('HTAG');
-    table.string('HTR');
+    table.decimal('id').notNullable();
+    table.text('Div').notNullable();
+    table.string('Season').notNullable();
+    table.date('Date').notNullable();
+    table.string('HomeTeam').notNullable();
+    table.string('AwayTeam').notNullable();
+    table.string('FTHG').notNullable();
+    table.string('FTAG').notNullable();
+    table.string('FTR').notNullable();
+    table.string('HTHG').notNullable();
+    table.string('HTAG').notNullable();
+    table.string('HTR').notNullable();
     table.timestamps(true, true);
   });
 };
