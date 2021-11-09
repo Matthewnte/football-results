@@ -1,12 +1,15 @@
 const logger = require('../config/winston');
+const { env } = require('../config');
 
 module.exports = (error, request, response, next) => {
   const errorMessage = error.rawError ? error.rawError.message : error;
 
-  logger.error({
-    message: `${errorMessage}`,
-    stack: error.stack,
-  });
+  if (env !== 'test') {
+    logger.error({
+      message: `${errorMessage}`,
+      stack: error.stack,
+    });
+  }
 
   // Operational, trusted error
   if (error.isOperational) {
