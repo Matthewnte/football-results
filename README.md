@@ -6,7 +6,7 @@ Football result simple NodeJS server that serves the football results included i
 
 1. Clone this repository
 
-2. Provide the required environment variables as describe in .env.sample
+2. Provide the required environment variables as describe in .env.example
 
 3. Open the repository in terminal and setup dev environment by running:
 
@@ -20,7 +20,7 @@ Football result simple NodeJS server that serves the football results included i
   $ make test
 ```
 
-4. Serve the application locally by running:
+5. Serve the application locally by running:
 
 ```sh
   $ make serve
