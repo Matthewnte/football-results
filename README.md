@@ -25,3 +25,9 @@ Football result simple NodeJS server that serves the football results included i
 ```sh
   $ make serve
 ```
+
+5. Stop the server by running:
+
+```sh
+  $ make stop
+```
